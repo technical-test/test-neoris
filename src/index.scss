@@ -1,0 +1,102 @@
+$SMALL:768px;
+$PRIMARY_COLOR:#6200ee;
+$SECONDARY_COLOR:#ffffff;
+$ATENTION_COLOR:rgb(55, 0, 179);
+$EVEN_COLOR_TABLE:rgba(197, 197, 197,.7);
+$BACKGROUND_SHADOW:rgba(55, 0, 179,0.19);
+
+$ATENTION_COLOR_B:#4dd0e1;
+$PRIMARY_COLOR_B:#88ffff;
+$BACKGROUND_SHADOW_B:rgba(136, 255, 255,0.19);
+$FONT_TEXT:'Source Sans Pro', sans-serif;
+$FONT_TITLE: 'DM Sans', sans-serif;
+%CONTAINER_CENTER_ROW{
+  display: flex;
+  justify-content: center;
+}
+%CONTAINER_CENTER_COLUMN{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items:center;
+}
+
+
+@mixin BUTT0N($BG_C,$BG_CP,$BG_CS,$BG_SHADOW){
+  background-color:$BG_C;
+  color:$BG_CS;
+  border: none;
+  cursor:pointer;
+  padding:8px 25px;
+  transition: all ease-in-out .3s;
+  &:hover{
+    background-color:$BG_CP;
+    transition: all ease-in-out .3s;
+    box-shadow: 0 12px 16px 0 $BG_SHADOW, 0 17px 50px 0 $BG_SHADOW;
+  }
+}
+%BTN{
+  @include BUTT0N($ATENTION_COLOR,$PRIMARY_COLOR,$SECONDARY_COLOR,$BACKGROUND_SHADOW)
+}
+%BTN_B{
+  @include BUTT0N($ATENTION_COLOR_B,$PRIMARY_COLOR_B,$ATENTION_COLOR,$BACKGROUND_SHADOW_B)
+}
+
+.container-fluid{
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.content-class{
+  margin-top:60px;
+  @extend %CONTAINER_CENTER_ROW;
+  table {
+    font-family: $FONT_TEXT;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th{
+    background-color: $ATENTION_COLOR;
+    color:$SECONDARY_COLOR;
+    padding: 9px;
+  }
+  td {
+    border: 1px solid $EVEN_COLOR_TABLE;
+    text-align: left;
+    padding: 9px;
+    text-align: center;
+    font-size: .8em;
+    .btn-add{
+      @extend %BTN;
+    }
+    input:focus{
+    outline: none;   
+    }
+  }
+} 
+
+.container-card{ 
+  font-family: $FONT_TEXT;
+  font-size: .8em;
+  @extend %CONTAINER_CENTER_COLUMN;
+  padding: 40px;
+  border: 1px solid $EVEN_COLOR_TABLE;
+  margin-top: 100px;
+  label{
+    margin: 5px 00px;
+  }
+  select{
+    width: 100%;  
+  }
+  .btn-add{
+    margin-top: 60px;
+    @extend %BTN;
+  }
+}

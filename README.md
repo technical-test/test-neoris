@@ -2,17 +2,46 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+Se creara un carpeta principal(elija cualquier nombre),
+y luego dos carpetas:
+test-neoris(front)
+server(back)
 
+Front, instalar estas dependencias
+### `npm install -g node-modules`
+### `npm start npm i axios` 
+### `npm install node-sass --save`
+
+
+Para correr en el front,en la carpeta test-neoris
 ### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Server, instalar estas dependencias
+### `npm install -g node-modules`
+### `npm i -D nodemon`
+### `npm i express`
+### `npm i mongoose`
+### `npm i dotenv`
+### `npm i cors`
 
-### `npm test`
+Para correr el backend, en la carpeta server correr
+### `npm run dev`
+
+
+la base de datos esta en un cluster,
+con el siguiente link podes acceder en mongoCompass, a la coleccion
+
+mongodb+srv://test-neoris:Test1234Mongo@cluster0.kzhs8.mongodb.net/test-neoris
+
+
+
+
+
+
+
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
