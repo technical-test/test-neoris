@@ -51,6 +51,12 @@ const CardClass =()=>{
         tipo === ''){
         return saveError('todos los campos son obligatorios')
         }
+        if(typeof  parseInt(dia) !== 'number' || parseInt(dia) > 31){
+            return saveError('los dias deben no deben superar a 31')
+        }
+        if(typeof  parseInt(mes) !== 'number' || parseInt(mes) > 12){
+            return saveError('los meses no deben ser superiores a 12')
+        }
 
         if (listIdDate.includes( idSelect.toString()) ) {
             saveError('')
@@ -87,14 +93,14 @@ const CardClass =()=>{
 
                 <label>Dia:</label>
                 <input  
-                    type="text" 
+                    type="number" 
                     name="dia"
                     value={dia}
                     onChange={handleChange}   
                 />
                 <label>Mes:</label>
                 <input  
-                    type="text" 
+                    type="number" 
                     name="mes"
                     value={mes}
                     onChange={handleChange}  

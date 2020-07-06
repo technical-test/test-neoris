@@ -9,7 +9,7 @@ server(back)
 
 Front, instalar estas dependencias
 ### `npm install -g node-modules`
-### `npm start npm i axios` 
+### `npm i axios` 
 ### `npm install node-sass --save`
 
 
